@@ -49,6 +49,7 @@ jobs:
 
   push-redcap-php-fpm:
     name: push-redcap-php-fpm
+    needs: scan-redcap-php-fpm
     runs-on: ubuntu-24.04
     steps:
       - name: Checkout code

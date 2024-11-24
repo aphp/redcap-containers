@@ -46,3 +46,23 @@ jobs:
           scanners: 'vuln,secret,license'
           vuln-type: 'os,library'
           severity: 'CRITICAL'
+
+  push-redcap-fastcgi-client:
+    name: push-redcap-fastcgi-client
+    needs: scan-redcap-fastcgi-client
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: 'Login to GitHub Container Registry'
+        uses: docker/login-action@v3.3.0
+        with:
+          registry: ghcr.io
+          username: ${{github.actor}}
+          password: ${{secrets.GITHUB_TOKEN}}
+      - name: Build and push
+        uses: docker/build-push-action@v6.9.0
+        with:
+          context: "{{defaultContext}}:fastcgi-client"
+          push: true
+          tags: ghcr.io/aphp/redcap-fastcgi-client:${{ github.sha }}
