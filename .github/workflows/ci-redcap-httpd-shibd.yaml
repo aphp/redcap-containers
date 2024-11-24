@@ -29,6 +29,13 @@ jobs:
         uses: actions/checkout@v4
       - name: Build container from Dockerfile
         run: docker build -t ghcr.io/aphp/redcap-httpd-shibd:${{ github.sha }} ./httpd-shibd
+      - name: Run dockle on container
+        uses: goodwithtech/dockle-action@main
+        with:
+          image: 'ghcr.io/aphp/redcap-httpd-shibd:${{ github.sha }}'
+          format: 'list'
+          exit-code: '1'
+          exit-level: 'fatal'
       - name: Scan container for vulnerabilities with Trivy
         uses: aquasecurity/trivy-action@0.28.0
         with:
