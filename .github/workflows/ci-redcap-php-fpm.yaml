@@ -29,13 +29,13 @@ jobs:
         uses: actions/checkout@v4
       - name: Build container from Dockerfile
         run: docker build -t ghcr.io/aphp/redcap-php-fpm:${{ github.sha }} ./php-fpm
-      - name: Run dockle on container
-        uses: goodwithtech/dockle-action@main
+      - name: Run Dockle
+        uses: erzz/dockle-action@v1.4.0
         with:
-          image: 'ghcr.io/aphp/redcap-php-fpm:${{ github.sha }}'
-          format: 'list'
-          exit-code: '1'
-          exit-level: 'fatal'
+          image: ghcr.io/aphp/redcap-php-fpm:${{ github.sha }}
+          report-format: json
+          failure-threshold: fatal
+          exit-code: 1
       - name: Scan container for vulnerabilities with Trivy
         uses: aquasecurity/trivy-action@0.28.0
         with:
