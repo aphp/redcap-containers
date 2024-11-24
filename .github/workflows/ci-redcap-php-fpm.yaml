@@ -9,7 +9,7 @@ on:
 jobs:
   lint-redcap-php-fpm:
     name: lint-redcap-php-fpm
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-24.04
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -46,3 +46,22 @@ jobs:
           scanners: 'vuln,secret,license'
           vuln-type: 'os,library'
           severity: 'CRITICAL'
+
+  push-redcap-php-fpm:
+    name: push-redcap-php-fpm
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: 'Login to GitHub Container Registry'
+        uses: docker/login-action@v3.3.0
+        with:
+          registry: ghcr.io
+          username: ${{github.actor}}
+          password: ${{secrets.GITHUB_TOKEN}}
+      - name: Build and push
+        uses: docker/build-push-action@v6.9.0
+        with:
+          context: "{{defaultContext}}:php-fpm"
+          push: true
+          tags: ghcr.io/aphp/redcap-php-fpm:${{ github.sha }}
