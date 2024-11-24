@@ -1,0 +1,40 @@
+name: build
+on:
+  push:
+    branches:
+      - main
+      - dev
+  pull_request:
+
+jobs:
+  lint-redcap-httpd-shibd:
+    name: lint-redcap-httpd-shibd
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Lint Dockerfile with Hadolint
+        uses: hadolint/hadolint-action@v3.1.0
+        with:
+          dockerfile: ./httpd-shibd/Dockerfile
+          override-info: DL3008,DL3018,DL3041,SC2046
+          failure-threshold: warning
+
+  scan-redcap-httpd-shibd:
+    name: scan-redcap-httpd-shibd
+    needs: lint-redcap-httpd-shibd
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Build container from Dockerfile
+        run: docker build -t ghcr.io/aphp/redcap-httpd-shibd:${{ github.sha }} ./httpd-shibd
+      - name: Scan container for vulnerabilities with Trivy
+        uses: aquasecurity/trivy-action@0.28.0
+        with:
+          image-ref: 'ghcr.io/aphp/redcap-httpd-shibd:${{ github.sha }}'
+          format: 'table'
+          exit-code: '1'
+          ignore-unfixed: true
+          vuln-type: 'os,library'
+          severity: 'CRITICAL'

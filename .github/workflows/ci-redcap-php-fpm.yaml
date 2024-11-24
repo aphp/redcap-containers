@@ -1,0 +1,40 @@
+name: build
+on:
+  push:
+    branches:
+      - main
+      - dev
+  pull_request:
+
+jobs:
+  lint-redcap-php-fpm:
+    name: lint-redcap-php-fpm
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Lint Dockerfile with Hadolint
+        uses: hadolint/hadolint-action@v3.1.0
+        with:
+          dockerfile: ./php-fpm/Dockerfile
+          override-info: DL3008,DL3018,DL3041,SC2046
+          failure-threshold: warning
+
+  scan-redcap-php-fpm:
+    name: scan-redcap-php-fpm
+    needs: lint-redcap-php-fpm
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Build container from Dockerfile
+        run: docker build -t ghcr.io/aphp/redcap-php-fpm:${{ github.sha }} ./php-fpm
+      - name: Scan container for vulnerabilities with Trivy
+        uses: aquasecurity/trivy-action@0.28.0
+        with:
+          image-ref: 'ghcr.io/aphp/redcap-php-fpm:${{ github.sha }}'
+          format: 'table'
+          exit-code: '1'
+          ignore-unfixed: true
+          vuln-type: 'os,library'
+          severity: 'CRITICAL'

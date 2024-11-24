@@ -1,4 +1,4 @@
-FROM php:8.1-fpm-bookworm
+FROM php:8.3-fpm-bookworm
 
 ### Installing required packages
 RUN apt-get update -y &&\
@@ -18,7 +18,8 @@ RUN apt-get update -y &&\
         libmagickwand-dev \
         libpng-dev \
         dos2unix && \
-    apt clean	
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
 
 # Installing PHP extensions
 RUN docker-php-ext-configure gd --with-freetype --with-jpeg && \
