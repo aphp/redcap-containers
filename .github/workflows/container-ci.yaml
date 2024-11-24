@@ -7,15 +7,19 @@ on:
   pull_request:
 
 jobs:
-  scan-redcap-fastcgi-client:
-    name: trivy
+  redcap-fastcgi-client:
+    name: redcap-fastcgi-client
     runs-on: ubuntu-20.04
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
-      - name: Build an image from Dockerfile
+        uses: actions/checkout@v4
+      - name: Lint Dockerfile with Hadolint
+        uses: hadolint/hadolint-action@v3.1.0
+        with:
+          dockerfile: ./fastcgi-client/Dockerfile
+      - name: Build container from Dockerfile
         run: docker build -t ghcr.io/aphp/redcap-fastcgi-client:${{ github.sha }} ./fastcgi-client
-      - name: Run Trivy vulnerability scanner
+      - name: Scan container for vulnerabilities with Trivy
         uses: aquasecurity/trivy-action@0.28.0
         with:
           image-ref: 'ghcr.io/aphp/redcap-fastcgi-client:${{ github.sha }}'
@@ -25,15 +29,19 @@ jobs:
           vuln-type: 'os,library'
           severity: 'CRITICAL'
 
-  scan-redcap-httpd-shibd:
-    name: trivy
+  redcap-httpd-shibd:
+    name: redcap-httpd-shibd
     runs-on: ubuntu-20.04
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
-      - name: Build an image from Dockerfile
+        uses: actions/checkout@v4
+      - name: Lint Dockerfile with Hadolint
+        uses: hadolint/hadolint-action@v3.1.0
+        with:
+          dockerfile: ./httpd-shibd/Dockerfile
+      - name: Build container from Dockerfile
         run: docker build -t ghcr.io/aphp/redcap-httpd-shibd:${{ github.sha }} ./httpd-shibd
-      - name: Run Trivy vulnerability scanner
+      - name: Scan container for vulnerabilities with Trivy
         uses: aquasecurity/trivy-action@0.28.0
         with:
           image-ref: 'ghcr.io/aphp/redcap-httpd-shibd:${{ github.sha }}'
@@ -43,15 +51,19 @@ jobs:
           vuln-type: 'os,library'
           severity: 'CRITICAL'
 
-  scan-redcap-php-fpm:
-    name: trivy
+  redcap-php-fpm:
+    name: redcap-php-fpm
     runs-on: ubuntu-20.04
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
-      - name: Build an image from Dockerfile
+        uses: actions/checkout@v4
+      - name: Lint Dockerfile with Hadolint
+        uses: hadolint/hadolint-action@v3.1.0
+        with:
+          dockerfile: ./php-fpm/Dockerfile
+      - name: Build container from Dockerfile
         run: docker build -t ghcr.io/aphp/redcap-php-fpm:${{ github.sha }} ./php-fpm
-      - name: Run Trivy vulnerability scanner
+      - name: Scan container for vulnerabilities with Trivy
         uses: aquasecurity/trivy-action@0.28.0
         with:
           image-ref: 'ghcr.io/aphp/redcap-php-fpm:${{ github.sha }}'
