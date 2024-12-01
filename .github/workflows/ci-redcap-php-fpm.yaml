@@ -1,11 +1,12 @@
 name: build
+
 on:
   push:
     branches:
-      - main
-      - dev
-  pull_request:
-
+      - "dev"
+    tags:
+      - "v*.*.*"
+      
 jobs:
   lint-redcap-php-fpm:
     name: lint-redcap-php-fpm
