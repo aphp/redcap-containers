@@ -27,7 +27,7 @@ This project uses 3 Github Workflows (presents under the .github/workflows direc
 
 ## How can I contribute?
 
-You're welcome to read the [contributing guidelines](./CONTRIBUTING.md).
+You're welcome to read the [contribution guidelines](./CONTRIBUTING.md).
 
 ## How is this project licensed?
 
