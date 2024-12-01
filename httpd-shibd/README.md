@@ -54,7 +54,7 @@ stdout_logfile_maxbytes=0
 
 ### HTTPd
 
-Depending of your usecase, the REDcap Communite Site can provide you zith the best ways to configure your HTTPd server.
+Depending of your usecase, the REDcap Communite Site can provide you with the best ways to configure your HTTPd server.
 
 ## How to use
 

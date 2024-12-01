@@ -14,7 +14,7 @@ The image is based on the official PHP 8.2 FPM image (debian-bookworm flavor), o
 - `mysqli`
 - `ghostscript`
 
-On top of this, the `/app/redcap` (with a symlink pointing to`/var/www/redcap`) and `/edocs` dirs are created with suitzable persmissions, ready to handle a redcap installation.
+On top of this, the `/app/redcap` (with a symlink pointing to`/var/www/redcap`) and `/edocs` dirs are created with suitable persmissions, ready to handle a REDCap installation.
 Finally, the image being rootless, the user `www-data` is exposed as the one executing the process. 
 
 ## How to use
