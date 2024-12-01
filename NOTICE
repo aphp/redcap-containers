@@ -1,0 +1,14 @@
+This software contains the following dependencies developped by Broadcom :
+
+- Docker Images
+  - alpinelinux : https://github.com/alpinelinux/docker-alpine
+  - rockylinux : https://github.com/rocky-linux/sig-cloud-instance-images
+  - docker/php: https://github.com/docker-library/php
+
+Those dependecies are present as source f the images presents in this repository. 
+Indidual licence statements are presents in the following links : 
+  - alpinelinux : https://github.com/alpinelinux/docker-alpine/blob/master/LICENSE
+  - rockylinux : https://rockylinux.org/fr-FR/legal/licensing
+  - docker/php: https://github.com/docker-library/php/blob/master/LICENSE
+
+The build process of the images present in this repository includes a licence check - reports can be found in the Github Actions.
