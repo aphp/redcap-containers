@@ -1,11 +1,12 @@
 name: build
+
 on:
   push:
     branches:
-      - main
-      - dev
-  pull_request:
-
+      - "dev"
+    tags:
+      - "v*.*.*"
+      
 jobs:
   lint-redcap-httpd-shibd:
     name: lint-redcap-httpd-shibd
