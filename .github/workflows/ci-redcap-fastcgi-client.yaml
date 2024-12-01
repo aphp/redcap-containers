@@ -62,7 +62,7 @@ jobs:
         with:
           # list of Docker images to use as base name for tags
           images: |
-            ghcr.io/aphp/redcqp-fastcgi-client            
+            ghcr.io/aphp/redcap-fastcgi-client            
           # generate Docker tags based on the following events/attributes
           tags: |
             type=schedule
