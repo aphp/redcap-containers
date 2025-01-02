@@ -1,4 +1,4 @@
-name: fastcgi-client
+name: fastcgi-client-ci
 
 on:
   push:

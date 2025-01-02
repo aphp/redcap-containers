@@ -1,4 +1,4 @@
-name: htpd-shibd
+name: htpd-shibd-ci
 
 on:
   push:
