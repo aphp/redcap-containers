@@ -12,5 +12,5 @@ jobs:
     uses: aphp/ci-workflows/.github/workflows/container-ci.yml@dev
     with:
       dockerfile-context: "./php-fpm"
-      dockerfile-name: "./php-fpm/Dockerfile"
+      dockerfile-name: "Dockerfile"
       image-name: "redcap-php-fpm"

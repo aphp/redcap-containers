@@ -12,5 +12,5 @@ jobs:
     uses: aphp/ci-workflows/.github/workflows/container-ci.yml@dev
     with:
       dockerfile-context: "./httpd-shibd"
-      dockerfile-name: "./httpd-shibd/Dockerfile"
+      dockerfile-name: "Dockerfile"
       image-name: "redcap-httpd-shibd"
