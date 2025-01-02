@@ -9,7 +9,7 @@ on:
 
 jobs:
   call-aphp-container-ci-workflow:
-    uses: aphp/ci-workflows/workflows/containers/container-ci.yaml@dev
+    uses: aphp/ci-workflows/.github/workflows/containers/container-ci.yml@dev
     with:
       dockerfile-context: "./php-fpm"
       dockerfile-name: "./php-fpm/Dockerfile"
