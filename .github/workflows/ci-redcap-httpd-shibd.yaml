@@ -1,4 +1,4 @@
-name: htpd-shibd-ci
+name: redcap-htpd-shibd-container-ci
 run-name: APHP Container CLI Workflow triggered by @${{ github.actor }}
 
 on:
