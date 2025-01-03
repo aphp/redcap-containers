@@ -1,4 +1,4 @@
-name: redcap-fastcgi-client-container-ci
+name: redcap-fastcgi-client-container-c
 run-name: APHP Container CLI Workflow triggered by @${{ github.actor }}
 
 on:
