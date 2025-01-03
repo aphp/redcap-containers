@@ -9,7 +9,7 @@ on:
       - "v*.*.*"
 
 jobs:
-  call-aphp-container-ci-workflow:
+  aphp-container-ci-workflow:
     uses: aphp/ci-workflows/.github/workflows/container-ci.yml@dev
     with:
       dockerfile-path: "./httpd-shibd/Dockerfile"
