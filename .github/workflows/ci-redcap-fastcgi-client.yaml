@@ -14,4 +14,4 @@ jobs:
     with:
       dockerfile-context: "./fastcgi-client"
       dockerfile-name: "Dockerfile"
-      image-name: "redcap-fastcgi-client"
+      image-name: "ghcr.io/aphp/redcap-fastcgi-client"

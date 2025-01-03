@@ -14,4 +14,4 @@ jobs:
     with:
       dockerfile-context: "./php-fpm"
       dockerfile-name: "Dockerfile"
-      image-name: "redcap-php-fpm"
+      image-name: "ghcr.io/aphp/redcap-php-fpm"

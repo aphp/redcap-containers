@@ -14,4 +14,4 @@ jobs:
     with:
       dockerfile-context: "./httpd-shibd"
       dockerfile-name: "Dockerfile"
-      image-name: "redcap-httpd-shibd"
+      image-name: "ghcr.io/aphp/redcap-httpd-shibd"
