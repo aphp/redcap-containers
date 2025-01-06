@@ -12,5 +12,5 @@ jobs:
   aphp-container-ci-workflow:
     uses: aphp/ci-workflows/.github/workflows/container-ci.yml@dev
     with:
-      dockerfile-path: "./fastcgi-client/Dockerfile"
+      dockerfile-path: "fastcgi-client/Dockerfile"
       image-name: "ghcr.io/aphp/redcap-fastcgi-client"
