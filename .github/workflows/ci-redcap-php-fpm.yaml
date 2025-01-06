@@ -10,7 +10,7 @@ on:
 
 jobs:
   aphp-container-ci-workflow:
-    uses: aphp/ci-workflows/.github/workflows/container-ci.yml@dev
+    uses: aphp/ci-workflows/.github/workflows/container-ci.yml@main
     with:
       dockerfile-path: "php-fpm/Dockerfile"
       image-name: "ghcr.io/aphp/redcap-php-fpm"
