@@ -1,7 +1,7 @@
 FROM rockylinux:9
 
 ### Adding Shibboleth official repos
-COPY ./config/shibboleth.repo /etc/yum.repos.d/shibboleth.repo
+COPY ./httpd-shibd/config/shibboleth.repo /etc/yum.repos.d/shibboleth.repo
 
 ### Installing httpd, shibboleth & supervisor
 RUN dnf install -y epel-release &&\
