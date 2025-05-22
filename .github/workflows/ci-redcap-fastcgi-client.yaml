@@ -2,6 +2,8 @@ name: redcap-fastcgi-client-container-ci
 run-name: FASTCGI CI triggered by @${{ github.actor }}
 
 on:
+  schedule:
+    - cron: "0 5 * * *"
   push:
     branches:
       - "dev"

@@ -2,6 +2,8 @@ name: redcap-php-fpm-container-ci
 run-name: PHP/FPM CI triggered by @${{ github.actor }}
 
 on:
+  schedule:
+    - cron: "0 5 * * *"
   push:
     branches:
       - "dev"
