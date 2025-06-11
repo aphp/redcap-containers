@@ -1,8 +1,9 @@
 FROM php:8.2-fpm-bookworm
 
 ### Installing required packages
-RUN apt-get update -y &&\
-    apt-get -y --no-install-recommends install \
+RUN apt update -y &&\
+    apt upgrade -y &&\
+    apt -y --no-install-recommends install \
         net-tools  \
         vim \
         wget \
@@ -18,7 +19,7 @@ RUN apt-get update -y &&\
         libmagickwand-dev \
         libpng-dev \
         dos2unix && \
-    apt-get clean && \
+    apt clean && \
     rm -rf /var/lib/apt/lists/*
 
 # Installing PHP extensions

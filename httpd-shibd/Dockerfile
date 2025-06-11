@@ -6,7 +6,12 @@ COPY ./httpd-shibd/config/shibboleth.repo /etc/yum.repos.d/shibboleth.repo
 ### Installing httpd, shibboleth & supervisor
 RUN dnf install -y epel-release &&\
     dnf update -y &&\
-    dnf install -y shibboleth.x86_64 httpd supervisor mod_ssl &&\
+    dnf upgrade -y &&\
+    dnf install -y \
+        supervisor \ 
+        httpd \ 
+        shibboleth.x86_64 \
+        mod_ssl &&\
     dnf clean all
 
 RUN ls -lah /var/run 
