@@ -1,8 +1,10 @@
 FROM php:8.2-fpm-bookworm
 
-### Installing required packages
+### Installing required packages and removing useless ones (to fix CVEs)
 RUN apt-get update -y &&\
     apt-get upgrade -y &&\
+    apt-get purge -y \
+        wget &&\
     apt-get install -y --no-install-recommends \
         libfcgi-bin \
         msmtp \
