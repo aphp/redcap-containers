@@ -7,8 +7,6 @@ This repository is hosting the container images that are needed to run the REDCa
 Those images are as follow : 
 - `httpd-shibd` : A custom container made to host an instance of Apache HTTPd and Shibboleth.
    - [see the `httpd-shibd` folder](./httpd-shibd/)
-- `fastcgi-client` : A simple FastCGI client.
-   - [see the `fastcgi-client` folder](./fastcgi-client/)
 - `php-fpm` : A PHP 8.2 FPM server that contains all dependencies and configurations needed by REDCap.
    - [see the `php-fpm` folder](./php-fpm/)
 

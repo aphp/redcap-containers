@@ -3,13 +3,7 @@ FROM php:8.2-fpm-bookworm
 ### Installing required packages
 RUN apt-get update -y &&\
     apt-get -y --no-install-recommends install \
-        net-tools  \
-        vim \
-        wget \
-        curl \
-        ghostscript \
-        libcurl4-openssl-dev \
-        zip \
+        libfcgi-bin \
         msmtp \
         libzip-dev \
         libfreetype6-dev \
@@ -17,7 +11,6 @@ RUN apt-get update -y &&\
         imagemagick \
         libmagickwand-dev \
         libpng-dev \
-        dos2unix && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
