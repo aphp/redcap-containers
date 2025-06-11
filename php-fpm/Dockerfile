@@ -11,7 +11,7 @@ RUN apt-get update -y &&\
         libjpeg62-turbo-dev \
         imagemagick \
         libmagickwand-dev \
-        libpng-dev \
+        libpng-dev &&\
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
