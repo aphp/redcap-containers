@@ -6,6 +6,7 @@ RUN apt-get update -y &&\
     apt-get install -y --no-install-recommends \
         libfcgi-bin \
         msmtp \
+        libcurl4-openssl-dev \
         libzip-dev \
         libfreetype6-dev \
         libjpeg62-turbo-dev \
