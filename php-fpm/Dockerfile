@@ -1,9 +1,9 @@
 FROM php:8.2-fpm-bookworm
 
 ### Installing required packages
-RUN apt update -y &&\
-    apt upgrade -y &&\
-    apt install -y --no-install-recommends \
+RUN apt-get update -y &&\
+    apt-get upgrade -y &&\
+    apt-get install -y --no-install-recommends \
         libfcgi-bin \
         msmtp \
         libzip-dev \
@@ -12,7 +12,7 @@ RUN apt update -y &&\
         imagemagick \
         libmagickwand-dev \
         libpng-dev \
-    apt clean && \
+    apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
 # Installing PHP extensions
