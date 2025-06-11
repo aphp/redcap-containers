@@ -8,10 +8,10 @@ RUN dnf install -y epel-release &&\
     dnf update -y &&\
     dnf upgrade -y &&\
     dnf install -y \
-        supervisor \ 
-        httpd \ 
-        shibboleth.x86_64 \
-        mod_ssl &&\
+        supervisor \
+        httpd \
+        mod_ssl \
+        shibboleth.x86_64 &&\
     dnf clean all
 
 RUN ls -lah /var/run 

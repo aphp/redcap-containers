@@ -1,25 +1,21 @@
 FROM php:8.2-fpm-bookworm
 
-### Installing required packages
-RUN apt update -y &&\
-    apt upgrade -y &&\
-    apt -y --no-install-recommends install \
-        net-tools  \
-        vim \
-        wget \
-        curl \
-        ghostscript \
-        libcurl4-openssl-dev \
-        zip \
+### Installing required packages and removing useless ones (to fix CVEs)
+RUN apt-get update -y &&\
+    apt-get upgrade -y &&\
+    apt-get purge -y \
+        wget &&\
+    apt-get install -y --no-install-recommends \
+        libfcgi-bin \
         msmtp \
+        libcurl4-openssl-dev \
         libzip-dev \
         libfreetype6-dev \
         libjpeg62-turbo-dev \
         imagemagick \
         libmagickwand-dev \
-        libpng-dev \
-        dos2unix && \
-    apt clean && \
+        libpng-dev &&\
+    apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
 # Installing PHP extensions
