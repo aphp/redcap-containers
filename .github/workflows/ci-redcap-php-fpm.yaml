@@ -1,5 +1,5 @@
 name: redcap-php-fpm-container-ci
-run-name: PHP/FPM CI triggered by @${{ github.actor }}
+run-name: PHP/FPM  CI triggered by @${{ github.actor }}
 
 on:
   push:
