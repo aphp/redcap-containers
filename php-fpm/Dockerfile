@@ -10,6 +10,7 @@ RUN apt-get update -y &&\
         libfcgi-bin \
         msmtp \
         libcurl4-openssl-dev \
+        ghostscript \
         libzip-dev \
         libfreetype6-dev \
         libjpeg62-turbo-dev \
