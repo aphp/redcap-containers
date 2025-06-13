@@ -13,7 +13,8 @@ The image is based on the official PHP 8.2 FPM image (debian-bookworm flavor), o
 - `libcurl`
 - `mysqli`
 - `ghostscript`
-- `default-mysql-client` (used to setup REDCap DB during the startup probe used by APHP REDCap Helm Chart)
+- `default-mysql-client` (used to setup REDCap DB by the startup probe used by APHP REDCap Helm Chart)
+- `libfcgi-bin` (used to launch REDCap cronjobs by the liveness probe probe used by APHP REDCap Helm Chart)
 
 On top of this, the `/app/redcap` (with a symlink pointing to`/var/www/redcap`) and `/edocs` dirs are created with suitable permissions, ready to handle a REDCap installation.
 Finally, the image being rootless, the user `www-data` is exposed as the one executing the process. 
