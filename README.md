@@ -17,7 +17,7 @@ If you wish to use REDCap and are not sure where to start, you may visit the ded
 
 ## Continous Integration / Continous Delivery
 
-This project uses 3 Github Workflows (presents under the .github/workflows directory), which will, for each image :
+This project uses two Github Workflows (presents under the .github/workflows directory), which will, for each image :
 - Lint the Dockerfile using `Hadolint`
 - Scan the container images using `Dockle`
 - Runs critical vulnerability, secrets and license checks on the container image using `Trivy`
