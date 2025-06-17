@@ -12,12 +12,12 @@ Those images are as follow :
 
 Each subfolder contains its own README file.
 
-All those containers are `rootless`, and **none of them is containing, or distributing REDCap binairies**. 
+All those containers are `rootless`, and **none of them is containing, or distributing REDCap binaries**. 
 If you wish to use REDCap and are not sure where to start, you may visit the dedicated [REDCap Community Site](https://projectredcap.org/resources/community/).
 
-## Continous Integration / Continous Delivery
+## continuous Integration / continuous Delivery
 
-This project uses 3 Github Workflows (presents under the .github/workflows directory), which will, for each image :
+This project uses two Github Workflows (presents under the .github/workflows directory), which will, for each image :
 - Lint the Dockerfile using `Hadolint`
 - Scan the container images using `Dockle`
 - Runs critical vulnerability, secrets and license checks on the container image using `Trivy`
@@ -29,6 +29,6 @@ You're welcome to read the [contribution guidelines](./CONTRIBUTING.md).
 
 ## How is this project licensed?
 
-The informations about the licensing and the dependencies of this project can be found under : 
+The information about the licensing and the dependencies of this project can be found under : 
 - The [project's license file](./LICENSE)
 - The [legal notice](./NOTICE)

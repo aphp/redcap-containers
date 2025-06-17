@@ -1,18 +1,18 @@
 # `aphp/httpd-shibd` container image
 
 ## Description
-This image aims to build a custom container made to host an instance of Apache HTTPd and Shibboleth. Since Shibboleth is provided as a HTTPd module that spawns its own process, it cannot be easily isolated in a dedicated container. This container is then spawning and managing both of those processes with a `supervisord` rootless installation.
+This image aims to build a custom container made to host an instance of Apache HTTPd and Shibboleth. Since Shibboleth is provided as a HTTPd module that spawns its own process, it cannot be easily isolated in a dedicated container. This container is then spawning and managing both processes with a `supervisord` rootless installation.
 You can then map a `supervisord` configuration file that will handle the spawning of HTTPd and/or Shibboleth, according to your usecase.
 
 ## Content
-This image use [the reccomended way to install Shibboleth](https://shibboleth.atlassian.net/wiki/spaces/SP3/pages/2065335566/RPMInstall) on a RHEL/CentOS/RockyLinux 8+ base OS, alogside httpd.
-A dedicated non-root user is then created in order to manage the processes in a secure way.
+This image use [the recommended way to install Shibboleth](https://shibboleth.atlassian.net/wiki/spaces/SP3/pages/2065335566/RPMInstall) on a RHEL/CentOS/RockyLinux 8+ base OS, alongside httpd.
+A dedicated non-root user is also created in order to manage the processes in a secure way.
 
 ## Configuration
 
 ### supervisord
 
-Usually, a `supervisord` configuration file is used alongside this image, in order to efficienly manage and logs the processes activity.
+Usually, a `supervisord` configuration file is used alongside this image, in order to efficiently manage and logs the processes activity.
 
 Here's an example :
 
@@ -54,7 +54,7 @@ stdout_logfile_maxbytes=0
 
 ### HTTPd
 
-Depending of your usecase, the REDcap Communite Site can provide you with the best ways to configure your HTTPd server.
+Depending of your usecase, [the REDcap Community Site](https://projectredcap.org/resources/community/) can provide you with the best ways to configure your HTTPd server.
 
 ## How to use
 
@@ -64,7 +64,7 @@ The container image build from this project's Github Workflow is hosted on the G
 docker pull ghcr.io/aphp/redcap-httpd-shibd:latest
 ```
 
-If you wish to run it alongside the `supervisord` config file, juste use the following command : 
+If you wish to run it alongside the `supervisord` config file, just use the following command : 
 
 ```sh
 docker run ghcr.io/aphp/redcap-httpd-shibd:latest -v ${your-config-file}:/etc/supervisor/supervisord-redcap-front.conf

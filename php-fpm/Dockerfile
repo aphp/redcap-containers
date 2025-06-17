@@ -6,9 +6,11 @@ RUN apt-get update -y &&\
     apt-get purge -y \
         wget &&\
     apt-get install -y --no-install-recommends \
+        default-mysql-client \
         libfcgi-bin \
         msmtp \
         libcurl4-openssl-dev \
+        ghostscript \
         libzip-dev \
         libfreetype6-dev \
         libjpeg62-turbo-dev \
