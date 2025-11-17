@@ -10,7 +10,7 @@ Those images are as follow :
 - `php-fpm` : A PHP 8.4 FPM server that contains all dependencies and configurations needed by REDCap.
    - [see the `php-fpm` folder](./php-fpm/)
 
-Each subfolder contains its own README file.
+Each subfolder contains its own README file. 
 
 All those containers are `rootless`, and **none of them is containing, or distributing REDCap binaries**. 
 If you wish to use REDCap and are not sure where to start, you may visit the dedicated [REDCap Community Site](https://projectredcap.org/resources/community/).
