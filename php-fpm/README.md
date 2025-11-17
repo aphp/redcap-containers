@@ -1,13 +1,13 @@
 # `aphp/php-fpm` container image
 
 ## Description
-This image aims to provides with a PHP 8.2 FPM server, including all the dependencies that REDCap needs to operates correctly (this includes several image processing libraries, as well as some custom PHP extensions as `imagick`).
+This image aims to provides with a PHP 8.4 FPM server, including all the dependencies that REDCap needs to operates correctly (this includes several image processing libraries, as well as some custom PHP extensions as `imagick`).
 
 **This image doesn't contains, nor distributes REDCap binaries**. 
 If you wish to use REDCap and are not sure where to start, you may visit the dedicated [REDCap Community Site](https://projectredcap.org/resources/community/).
 
 ## Content
-The image is based on the official PHP 8.2 FPM image (debian-bookworm flavor), on top of which are added a few libraries and php extensions, such as :
+The image is based on the official PHP 8.4 FPM image (debian-bookworm flavor), on top of which are added a few libraries and php extensions, such as :
 - `imagick`
 - `libpng`
 - `libcurl`
