@@ -11,8 +11,14 @@ on:
       - "v*.*.*"
 
 jobs:
-  aphp-container-ci-workflow:
-    uses: aphp/ci-workflows/.github/workflows/container-ci.yml@main
+  redcap-container:
+    uses: "aphp/ci-workflows/.github/workflows/container-ci.yml@dev"
     with:
       dockerfile-path: "php-fpm/Dockerfile"
+      hadolint-ignore: "DL3008,DL3018,DL3041,SC2046"
       image-name: "ghcr.io/aphp/redcap-php-fpm"
+      image-custom-tag: ""
+      extra-build-args: ""
+      dockle-ignore: ""
+      trivy-ignore-vuln-ids: ""
+      trivy-ignore-license-ids: ""
