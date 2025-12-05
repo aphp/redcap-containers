@@ -22,3 +22,5 @@ jobs:
       dockle-ignore: ""
       trivy-ignore-vuln-ids: ""
       trivy-ignore-license-ids: ""
+      dockle-accept-file: ""
+      dockle-accept-key: "PHP_SHA256,PHPIZE_DEPS,PHP_INI_DIR,savedAptMark,PHP_CFLAGS,PHP_CPPFLAGS,PHP_VERSION,PHP_URL,savedAptMark,PHP_LDFLAGS,s!"
