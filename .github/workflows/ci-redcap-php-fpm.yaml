@@ -39,4 +39,7 @@ jobs:
         GNUPGHOME,
         CFLAGS,
         include,
-        CPPFLAGS
+        CPPFLAGS,
+        LDFLAGS,
+        APT::AutoRemove::RecommendsImportant,
+        LDFLAGS
