@@ -38,4 +38,5 @@ jobs:
         -D_FILE_OFFSET_BITS,
         GNUPGHOME,
         CFLAGS,
-        include
+        include,
+        CPPFLAGS
