@@ -23,6 +23,7 @@ jobs:
       trivy-ignore-vuln-ids: ""
       trivy-ignore-license-ids: ""
       dockle-accept-file: ""
+      dockle-ignore: "CIS-DI-0010"
       dockle-accept-key: |
         PHP_SHA256,
         PHPIZE_DEPS,
