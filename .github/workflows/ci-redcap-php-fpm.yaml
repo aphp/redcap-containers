@@ -19,11 +19,10 @@ jobs:
       image-name: "ghcr.io/aphp/redcap-php-fpm"
       image-custom-tag: ""
       extra-build-args: ""
-      dockle-ignore: ""
+      dockle-ignore: "CIS-DI-0010"
       trivy-ignore-vuln-ids: ""
       trivy-ignore-license-ids: ""
       dockle-accept-file: ""
-      dockle-ignore: "CIS-DI-0010"
       dockle-accept-key: |
         PHP_SHA256,
         PHPIZE_DEPS,
