@@ -51,4 +51,3 @@ USER www-data
 
 ### Starting PHP-FPM service ###
 CMD ["php-fpm"]
-
