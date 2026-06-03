@@ -12,7 +12,7 @@ on:
 
 jobs:
   redcap-container:
-    uses: "aphp/ci-workflows/.github/workflows/container-ci.yml@main"
+    uses: "aphp/ci-workflows/.github/workflows/container-ci.yml@bugfix/fix_sarif_file_bug"
     with:
       dockerfile-path: "php-fpm/Dockerfile"
       hadolint-ignore: "DL3008,DL3018,DL3041,SC2046"
