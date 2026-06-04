@@ -35,4 +35,3 @@ WORKDIR /var/www/redcap
 
 ### Launching supervisord
 ENTRYPOINT ["/usr/bin/supervisord"]
-
