@@ -1,4 +1,4 @@
-FROM php:8.4.14-fpm-bookworm
+FROM php:8.5.12-fpm-bookworm
 
 ### Installing required packages and removing useless ones (to fix CVEs)
 RUN apt-get update -y &&\
